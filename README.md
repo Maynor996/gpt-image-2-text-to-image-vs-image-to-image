@@ -1,138 +1,140 @@
-# 文生图和图生图到底怎么选？GPT Image 2 里这两种工作流分别适合什么场景
+# Text to Image vs. Image to Image: Which Workflow Should You Use in GPT Image 2?
 
-## 先说结论
+## The short answer
 
-- 没有参考素材，想快速探索方向：用文生图
-- 已经有产品图、人物图或风格参考：用图生图
-- 要做商业交付，往往不是二选一，而是先文生图找方向，再图生图做稳定输出
+- If you have no source material and want to explore ideas quickly, use text to image
+- If you already have a product photo, portrait, or style reference, use image to image
+- For commercial work, the best workflow is often not one or the other, but text to image for direction, then image to image for stable output
 
-## 为什么很多人总是用错模式
+## Why people often choose the wrong mode
 
-很多人一上来就只用文生图，然后发现：
+A common mistake is using text to image for everything and then wondering why the results feel unstable.
 
-- 结果不够稳定
-- 风格漂移很大
-- 同一系列图像不像一套内容
-- 产品、人物或品牌元素难以保持一致
+Typical problems include:
 
-根本原因不是模型不行，而是工作流选错了。
+- outputs drift too much from one image to the next
+- visual style is hard to keep consistent
+- a series of images does not feel like one system
+- product, person, or brand elements are hard to preserve
 
-## 文生图最适合解决什么问题
+The root issue is often not the model. It is the workflow choice.
 
-文生图的核心价值，是“从空白到方向”。
+## What text to image is best at
 
-它最适合做的是：
+The real value of text to image is going from a blank page to a direction.
 
-- 创意探索
-- 风格发散
-- 方案头脑风暴
-- 标题图、封面图、概念图
-- 低成本尝试多个视觉方向
+It works well for:
 
-### 文生图的优势
+- creative exploration
+- style divergence
+- brainstorming multiple concepts
+- cover images, hero visuals, and concept art
+- low-cost testing of several directions
 
-- 上手快
-- 不依赖素材准备
-- 适合大范围试错
-- 更适合找灵感和找方向
+### Strengths of text to image
 
-### 文生图的局限
+- fast to start
+- no preparation assets required
+- ideal for broad experimentation
+- strong for inspiration and concept discovery
 
-- 品牌一致性较弱
-- 人物一致性较难控制
-- 商业图稳定复用成本较高
+### Limits of text to image
 
-## 图生图最适合解决什么问题
+- weaker brand consistency
+- harder to control identity across a series
+- higher cost when you need stable commercial reuse
 
-图生图的核心价值，是“在已有视觉基础上做稳定变化”。
+## What image to image is best at
 
-它特别适合：
+The core value of image to image is making controlled changes on top of an existing visual base.
 
-- 保持人物脸部特征
-- 延续产品外观
-- 统一品牌视觉语气
-- 做真实世界素材升级
-- 控制构图、服装、场景与细节变化
+It is especially useful for:
 
-### 图生图的优势
+- preserving facial identity
+- keeping product appearance consistent
+- maintaining brand tone across versions
+- upgrading real-world source material
+- controlling changes to composition, clothing, scene, and details
 
-- 更容易保持一致性
-- 更适合商业交付
-- 更适合团队协作和模板化生产
+### Strengths of image to image
 
-### 图生图的局限
+- easier to maintain consistency
+- better suited for commercial delivery
+- better for teamwork and template-based production
 
-- 前提是你得先有一张可用参考图
-- 如果参考图质量太差，结果也会受影响
+### Limits of image to image
 
-## 在 GPT Image 2 里，推荐的实际用法
+- you need a usable source image first
+- if the reference quality is poor, the result will usually suffer too
 
-### 场景 1：做活动海报
+## Recommended ways to use both in GPT Image 2
 
-推荐流程：
+### Scenario 1: Campaign poster creation
 
-1. 先用文生图生成 3 到 5 个海报方向
-2. 选出最接近需求的一版
-3. 再用图生图继续细化构图、色调和元素
+A practical workflow:
 
-### 场景 2：做产品营销图
+1. Use text to image to create 3 to 5 possible poster directions
+2. Choose the version closest to your goal
+3. Use image to image to refine layout, color, and supporting elements
 
-推荐流程：
+### Scenario 2: Product marketing visuals
 
-1. 上传产品参考图
-2. 用图生图保持产品主体一致
-3. 再微调背景、灯光和卖点场景
+A practical workflow:
 
-### 场景 3：做人像或 IP 角色延展
+1. Upload the product reference image
+2. Use image to image to keep the product itself stable
+3. Adjust the background, lighting, and selling-point scene around it
 
-推荐流程：
+### Scenario 3: Portrait or character expansion
 
-1. 先准备清晰参考图
-2. 在提示词中明确写“保持面部特征一致”
-3. 用图生图做不同风格和场景扩展
+A practical workflow:
 
-## 一个简单判断公式
+1. Start with a clear reference image
+2. Explicitly tell the model to preserve facial identity
+3. Use image to image to explore different styles and scenes
 
-你可以这样判断：
+## A simple decision rule
 
-- 如果你问的是“我想做什么风格？” -> 文生图
-- 如果你问的是“我想把这张图变成什么版本？” -> 图生图
+You can think about it like this:
 
-## 常见误区
+- If the question is, "What style should this be?" use text to image
+- If the question is, "How should this existing image evolve?" use image to image
 
-### 误区 1：文生图能解决一切
+## Common misunderstandings
 
-文生图很强，但不适合所有稳定交付场景。尤其是电商、角色一致性、品牌系列图，图生图通常更合适。
+### Mistake 1: Text to image can solve everything
 
-### 误区 2：图生图只是“修图”
+Text to image is powerful, but it is not the best choice for every stable delivery scenario. In ecommerce, branded systems, and identity-sensitive work, image to image is often the better option.
 
-不是。图生图本质上是“在强约束下生成新结果”，非常适合批量商业内容。
+### Mistake 2: Image to image is just retouching
 
-### 误区 3：两者必须分开用
+Not really. Image to image is closer to generating new output under stronger constraints, which makes it very useful for scalable commercial content.
 
-实际上，最有效率的做法往往是组合使用。
+### Mistake 3: You must use them separately
 
-## 如果你现在就想试
+In practice, the most efficient workflow is often to combine them.
 
-- 文生图入口：https://photogen.asia/text-to-image
-- 图生图入口：https://photogen.asia/generate
+## Where to try both right now
+
+- Text to image: https://gptimage2.asia/text-to-image
+- Image to image: https://gptimage2.asia/generate
 
 ## FAQ
 
-### 文生图适合新手吗？
+### Is text to image better for beginners?
 
-适合，因为门槛最低，最容易快速看到结果。
+Yes. It has the lowest starting barrier and gives fast visual feedback.
 
-### 图生图更适合团队吗？
+### Is image to image better for teams?
 
-是的，因为它更适合做稳定、可复用、可交付的内容资产。
+Yes. It is usually more suitable for stable, reusable, and deliverable content assets.
 
-### 哪种方式更适合品牌内容？
+### Which one is better for brand content?
 
-如果你已经有品牌主视觉或参考素材，图生图通常更适合。
+If you already have a key visual, product photo, or brand reference, image to image is usually the better choice.
 
-## 总结
+## Final thought
 
-文生图是找方向，图生图是做稳定输出。
+Text to image helps you find direction. Image to image helps you create stable output.
 
-如果你把这两个流程分清楚，AI 图片生成的效率和可控性会直接上一个台阶。
+Once you separate those two jobs clearly, AI image generation becomes much more controllable and much more useful.
